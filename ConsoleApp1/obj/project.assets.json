@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\HLC_2021\\.nuget\\packages\\": {},
+    "C:\\Users\\Dell\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPT Aptech\\Hoc ky 2\\New folder\\C-Programing\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\FPT APTECH (Local)\\Hoc ky 2\\5 - C\\C-Programing\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "D:\\FPT Aptech\\Hoc ky 2\\New folder\\C-Programing\\ConsoleApp1\\ConsoleApp1.csproj",
-      "packagesPath": "C:\\Users\\HLC_2021\\.nuget\\packages\\",
-      "outputPath": "D:\\FPT Aptech\\Hoc ky 2\\New folder\\C-Programing\\ConsoleApp1\\obj\\",
+      "projectPath": "C:\\Users\\Dell\\Desktop\\FPT APTECH (Local)\\Hoc ky 2\\5 - C\\C-Programing\\ConsoleApp1\\ConsoleApp1.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\Desktop\\FPT APTECH (Local)\\Hoc ky 2\\5 - C\\C-Programing\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\HLC_2021\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
