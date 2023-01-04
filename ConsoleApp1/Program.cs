@@ -1,7 +1,7 @@
 ﻿using ConsoleApp1.assignments;
 using ConsoleApp1.session1;
 
-public class Test
+public class Program
 {
     public static void Main(string[] args)
     {
