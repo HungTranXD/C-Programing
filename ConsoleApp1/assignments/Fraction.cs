@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.assignment1
+namespace ConsoleApp1.assignments
 {
     public class Fraction
     {

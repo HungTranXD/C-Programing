@@ -1,4 +1,4 @@
-﻿using ConsoleApp1.assignment1;
+﻿using ConsoleApp1.assignments;
 using ConsoleApp1.session1;
 
 public class Test
