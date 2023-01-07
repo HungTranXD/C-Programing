@@ -1,11 +1,44 @@
 ﻿using ConsoleApp1.assignment2;
 using ConsoleApp1.assignments;
+using ConsoleApp1.assignmnet3;
 using ConsoleApp1.session1;
 using ConsoleApp1.session2;
+using ConsoleApp1.session3;
 
 public class Program
 {
-    public static void Main(string[] args) //Session 2
+    public static void Main(string[] args)
+    {
+        //Car car = new Car(); //không cấp phát ô nhớ
+        //Car car2 = new Car() { Brand = "Toyota", Type = "Sedan" }; //có ô nhớ
+
+        //Console.WriteLine(car.parts[0]); // Cách 1: Thông thường
+        //Console.WriteLine(car[0]); //Cách 2: Sử dụng Indexer
+
+        ////car[3] = "Doors"; -> lỗi vì chưa có ô nhớ nên không chạy hàm set được
+        //car.parts.Add("Doors");
+
+        //try
+        //{
+        //    int x = 10;
+        //    int y = 0;
+        //    if (y == 0) throw new Exception("y can not be zero");
+        //    Console.WriteLine("x / y = ");
+        //    int z = x / y;
+        //    Console.WriteLine(z);
+        //} catch(Exception ex)
+        //{
+        //    Console.WriteLine(ex.Message);
+        //}
+
+        // ---------------- TEST ASSIGNMENT 3 ----------------
+        VietnameseCustomer vnCus1 = new VietnameseCustomer("VN001", "Nguyễn Văn An", DateOnly.FromDateTime(DateTime.Now), 25, VnCusType.SinhHoat);
+        Console.WriteLine("Payment 1: " + vnCus1.CalPayment());
+
+        ForeignCustomer frCus1 = new ForeignCustomer("FR001", "John Smith", DateOnly.Parse("2021-01-01"), 200);
+        Console.WriteLine("Payment 2: " + frCus1.CalPayment());
+    }
+    public static void Main2(string[] args) //Session 2
     {
         ////Dog d = new Dog();
         ////d.SetSpecies("Husky");
@@ -61,7 +94,7 @@ public class Program
             
         }
     }
-    public static void MainT(string[] args) //Session 1
+    public static void Main1(string[] args) //Session 1
     {
         int x = 10;
         double y = 3.14;
