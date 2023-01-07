@@ -32,10 +32,10 @@ public class Program
         //}
 
         // ---------------- TEST ASSIGNMENT 3 ----------------
-        VietnameseCustomer vnCus1 = new VietnameseCustomer("VN001", "Nguyễn Văn An", DateOnly.FromDateTime(DateTime.Now), 25, VnCusType.SinhHoat);
+        VietnameseCustomer vnCus1 = new VietnameseCustomer("VN001", "Nguyễn Văn An", DateOnly.FromDateTime(DateTime.Now), 125, VnCusType.SinhHoat);
         Console.WriteLine("Payment 1: " + vnCus1.CalPayment());
 
-        ForeignCustomer frCus1 = new ForeignCustomer("FR001", "John Smith", DateOnly.Parse("2021-01-01"), 200);
+        ForeignCustomer frCus1 = new ForeignCustomer("FR001", "John Smith", DateOnly.Parse("2023-01-01"), 200);
         Console.WriteLine("Payment 2: " + frCus1.CalPayment());
     }
     public static void Main2(string[] args) //Session 2
