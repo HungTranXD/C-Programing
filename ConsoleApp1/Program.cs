@@ -1,13 +1,59 @@
 ﻿using ConsoleApp1.assignment2;
+using ConsoleApp1.assignment4;
 using ConsoleApp1.assignments;
 using ConsoleApp1.assignmnet3;
 using ConsoleApp1.session1;
 using ConsoleApp1.session2;
 using ConsoleApp1.session3;
+using ConsoleApp1.session4;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static void Main(string[] args) //Session 4
+    {
+        ////DemoDelegate.Alert("Demo ABC message");
+        ////DemoDelegate dd = new DemoDelegate();
+        ////dd.ShowMessage("Demo XYZ message");
+
+        //PrintString ps1 = new PrintString(ShowDanger);
+        ////ps1("Danger... beware!");
+        ////PrintString ps2 = new PrintString(DemoDelegate.Alert);
+        ////PrintString ps3 = new PrintString(new DemoDelegate().ShowMessage);
+
+        //ps1 += DemoDelegate.Alert;
+        //ps1 += new DemoDelegate().ShowMessage;
+        //ps1("Danger... beware!");
+
+        //ps1 += (s) => //Hàm ẩn danh cho: delegate (string s) { }
+        //{
+        //    Console.WriteLine("Anonymous: " + s);
+        //};
+
+        //PrintString ps4 = delegate (string s) //Khai báo mới (hàm delegate ở trên là đây)
+        //{
+        //    Console.WriteLine("Anonymous: " + s);
+        //};
+
+
+        //// ------ DEMO EVENT ------
+        //Button de = new Button(ps4);
+        //de.ClickAction();
+
+
+        // ---------------- TEST ASSIGNMENT 4 ----------------
+        News article1 = new News(1, "Article 1", "01/01/2023", "Admin", "Fake contents for this article are as followed...");
+        article1[0] = 3;
+        article1[1] = 5;
+        article1[2] = 5;
+        article1.Calculate();
+        article1.Display();
+    }
+
+    public static void ShowDanger(string message)
+    {
+        Console.WriteLine("Danger: " + message);
+    }
+    public static void Main3(string[] args) //Session 3
     {
         //Car car = new Car(); //không cấp phát ô nhớ
         //Car car2 = new Car() { Brand = "Toyota", Type = "Sedan" }; //có ô nhớ

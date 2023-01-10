@@ -30,5 +30,6 @@ namespace ConsoleApp1.session3
             get => parts[index];
             set => parts[index] = value;
         }
+
     }
 }
