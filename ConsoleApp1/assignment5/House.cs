@@ -36,7 +36,6 @@ namespace house.cm
 
         public virtual void Display()
         {
-            Console.WriteLine("Thong tin cua nha: ");
             Console.WriteLine($"- So nha: {SoNha}");
             Console.WriteLine($"- Dia chi: {DiaChi}");
             Console.WriteLine($"- Loai nha: {LoaiNha}");

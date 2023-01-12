@@ -23,7 +23,15 @@ public class Program
         //t2.Start();
         //Console.WriteLine("Main is done");
 
-        ManagerHouse.RunMenu();
+        ManagerHouse mh = new ManagerHouse();
+        
+        mh.HouseList.Add(new HaNoiHouse("111", "Ngo 2", "Nha cap 4", "Tay Ho"));
+        mh.HouseList.Add(new HaNoiHouse("222", "An Binh", "Chung cu", "Nam Tu Liem"));
+        mh.HouseList.Add(new HaNoiHouse("333", "Ngo W2", "Biet thu", "Cau Giay"));
+        mh.HouseList.Add(new HaNoiHouse("444", "Phuong Buoi", "Nha lien ke", "Dong Da"));
+
+        mh.ShowMenu();
+
     }
     static void RunThread(object o)
     {
