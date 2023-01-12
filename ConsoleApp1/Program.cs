@@ -6,38 +6,82 @@ using ConsoleApp1.session1;
 using ConsoleApp1.session2;
 using ConsoleApp1.session3;
 using ConsoleApp1.session4;
+using ConsoleApp1.session5;
+using house.hanoi;
+using Newtonsoft.Json;
 
 public class Program
 {
-    public static void Main(string[] args) //Session 4
+    public static void Main(string[] args) //Session 5
     {
-        ////DemoDelegate.Alert("Demo ABC message");
-        ////DemoDelegate dd = new DemoDelegate();
-        ////dd.ShowMessage("Demo XYZ message");
+        //Thread t1 = new Thread(RunThread);
+        //t1.Start("Hello");
+        //Thread t2 = new Thread(delegate ()
+        //{
+        //    Console.WriteLine("Demo anonymous function");
+        //});
+        //t2.Start();
+        //Console.WriteLine("Main is done");
 
-        //PrintString ps1 = new PrintString(ShowDanger);
-        ////ps1("Danger... beware!");
-        ////PrintString ps2 = new PrintString(DemoDelegate.Alert);
-        ////PrintString ps3 = new PrintString(new DemoDelegate().ShowMessage);
+        ManagerHouse.RunMenu();
+    }
+    static void RunThread(object o)
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            Console.WriteLine(o + " : " + i);
+            try
+            {
+                Thread.Sleep(1000);
+            } catch (Exception e) { }
+        }
+    }
+    static async Task<Root> CallAPI()
+    {
+        string url = "https://api.openweathermap.org/data/2.5/weather?q=Hanoi,vietnam&appid=09a71427c59d38d6a34f89b47d75975c&units=metric";
+        HttpClient http = new HttpClient();
+        var rs = await http.GetAsync(url); //lấy data về 
 
-        //ps1 += DemoDelegate.Alert;
-        //ps1 += new DemoDelegate().ShowMessage;
+        if (rs.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            string content = await rs.Content.ReadAsStringAsync();
+            Root r = JsonConvert.DeserializeObject<Root>(content);
+            return r;
+        }
+        return null;
+        
+    }
+
+
+    public static void Main4(string[] args) //Session 4
+    {
+        //DemoDelegate.Alert("Demo ABC message");
+        //DemoDelegate dd = new DemoDelegate();
+        //dd.ShowMessage("Demo XYZ message");
+
+        PrintString ps1 = new PrintString(ShowDanger);
         //ps1("Danger... beware!");
+        //PrintString ps2 = new PrintString(DemoDelegate.Alert);
+        //PrintString ps3 = new PrintString(new DemoDelegate().ShowMessage);
 
-        //ps1 += (s) => //Hàm ẩn danh cho: delegate (string s) { }
-        //{
-        //    Console.WriteLine("Anonymous: " + s);
-        //};
+        ps1 += DemoDelegate.Alert;
+        ps1 += new DemoDelegate().ShowMessage;
+        ps1("Danger... beware!");
 
-        //PrintString ps4 = delegate (string s) //Khai báo mới (hàm delegate ở trên là đây)
-        //{
-        //    Console.WriteLine("Anonymous: " + s);
-        //};
+        ps1 += (s) => //Hàm ẩn danh cho: delegate (string s) { }
+        {
+            Console.WriteLine("Anonymous: " + s);
+        };
+
+        PrintString ps4 = delegate (string s) //Khai báo mới (hàm delegate ở trên là đây)
+        {
+            Console.WriteLine("Anonymous: " + s);
+        };
 
 
-        //// ------ DEMO EVENT ------
-        //Button de = new Button(ps4);
-        //de.ClickAction();
+        // ------ DEMO EVENT ------
+        Button de = new Button(ps4);
+        de.ClickAction();
 
 
         // ---------------- TEST ASSIGNMENT 4 ----------------

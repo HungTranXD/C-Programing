@@ -10,6 +10,7 @@ namespace ConsoleApp1.assignment4
     {
         //Fields
         private int[] RateList = new int[3];
+        private int[] RateList2 = new int[3];
 
         //Properties
         public int ID { get; set; } 
@@ -17,7 +18,7 @@ namespace ConsoleApp1.assignment4
         public string PublishDate { get; set; }
         public string Author { get; set; }
         public string Content { get; set; }
-        public float AvarageRate { get; private set; }
+        public float AvarageRate { get; private set; } //Read-only property
 
         //Construcstor
         public News() { }
