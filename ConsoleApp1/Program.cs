@@ -13,8 +13,9 @@ using Newtonsoft.Json;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static void Main(string[] args) //Session 6
     {
+        // ---------------- TEST ASSIGNMENT 6 ----------------
         ManageStudents ms = new ManageStudents();
         ms.StudentList.Add(new Student("SV01", "Nguyen An", "Nam", 18, 8.5, 7.6, 8.7));
         ms.StudentList.Add(new Student("SV02", "Ha Trinh", "Nu", 17, 8, 9, 7.5));
