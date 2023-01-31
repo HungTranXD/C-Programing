@@ -17,33 +17,14 @@ namespace ConsoleApp1.assignment6
         }
 
         //1. Them sinh vien
-        public void AddStudent()
+        public void AddStudent(Student s)
         {
-            Console.WriteLine("Nhap cac thong tin:");
-            Console.WriteLine("ID: ");
-            string iD = Console.ReadLine();
-            Console.WriteLine("Ten: ");
-            string name = Console.ReadLine();
-            Console.WriteLine("Gioi tinh: ");
-            string gender = Console.ReadLine();
-            Console.WriteLine("Tuoi: ");
-            int age = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Diem toan: ");
-            double mathScore = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Diem ly: ");
-            double physicsScore = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Diem hoa: ");
-            double chemisScore = Convert.ToDouble(Console.ReadLine());
-
-            Student s = new Student(iD, name, gender, age, mathScore, physicsScore, chemisScore);
             StudentList.Add(s);
         }
 
         //2. Cap nhat thong tin sinh vien boi ID
-        public void UpdateStudentByID()
+        public void UpdateStudentByID(string iD)
         {
-            Console.WriteLine("Nhap ID muon cap nhat: ");
-            string iD = Console.ReadLine();
             foreach (Student s in StudentList)
             {
                 if (s.ID.Equals(iD))
@@ -51,7 +32,7 @@ namespace ConsoleApp1.assignment6
                     Console.WriteLine("Thong tin sinh vien tuong ung: ");
                     Console.WriteLine("1) Ten: " + s.Name);
                     Console.WriteLine("2) Gioi tinh: " + s.Gender);
-                    Console.WriteLine("3) Tuoi:" + s.Age);
+                    Console.WriteLine("3) Tuoi: " + s.Age);
                     Console.WriteLine("4) Diem toan: " + s.PhysicsScore);
                     Console.WriteLine("5) Diem ly: " + s.MathScore);
                     Console.WriteLine("6) Diem hoa: " + s.ChemistryScore);
@@ -61,25 +42,31 @@ namespace ConsoleApp1.assignment6
                     switch (Console.ReadLine())
                     {
                         case "1":
-                            Console.WriteLine("Sua ten: ");
+                            Console.Write("Sua ten: ");
+                            s.Name = Console.ReadLine();
                             return;
                         case "2":
-                            Console.WriteLine("Sua gioi tinh");
+                            Console.Write("Sua gioi tinh: ");
+                            s.Gender = Console.ReadLine();
                             return;
                         case "3":
-                            Console.WriteLine("Sua tuoi");
+                            Console.Write("Sua tuoi: ");
+                            s.Age = Convert.ToInt32(Console.ReadLine());
                             return;
                         case "4":
-                            Console.WriteLine("Sua diem toan");
+                            Console.Write("Sua diem toan: ");
+                            s.MathScore = Convert.ToDouble(Console.ReadLine());
                             return;
                         case "5":
-                            Console.WriteLine("Sua diem ly");
+                            Console.Write("Sua diem ly: ");
+                            s.PhysicsScore = Convert.ToDouble(Console.ReadLine());
                             return;
                         case "6":
-                            Console.WriteLine("Sua diem hoa");
+                            Console.Write("Sua diem hoa: ");
+                            s.ChemistryScore = Convert.ToDouble(Console.ReadLine());
                             return;
                         default:
-                            Console.WriteLine("Khong hop le");
+                            Console.Write("Khong hop le");
                             return;
                     }
                 }
@@ -89,10 +76,8 @@ namespace ConsoleApp1.assignment6
         }
 
         //3. Xoa sinh vien boi ID
-        public void DeleteStudent() 
+        public void DeleteStudent(string iD) 
         {
-            Console.WriteLine("Nhap ID sinh vien can xoa :");
-            string iD = Console.ReadLine();
             foreach (Student s in StudentList)
             {
                 if (s.ID.Equals(iD))
@@ -139,10 +124,10 @@ namespace ConsoleApp1.assignment6
         }
 
         //8. Hien thi danh sach sinh vien
-        public void DisplayAllStudents()
+        public void DisplayStudents(List<Student> list)
         {
             Console.WriteLine("|{0,10}|{1,20}|{2,10}|{3,10}|{4,10}|{5,10}|{6,10}|{7,10}|{8,10}|", "ID", "Ten", "Gioi tinh", "Tuoi", "Diem toan", "Diem ly", "Diem hoa", "Trung binh", "Hoc luc");
-            foreach (Student s in StudentList)
+            foreach (Student s in list)
             {
                 Console.WriteLine("|{0,10}|{1,20}|{2,10}|{3,10}|{4,10}|{5,10}|{6,10}|{7,10}|{8,10}|", s.ID, s.Name, s.Gender, s.Age, string.Format("{0:0.00}", s.MathScore), string.Format("{0:0.00}", s.PhysicsScore), string.Format("{0:0.00}", s.ChemistryScore), string.Format("{0:0.00}", s.AverageScore), s.RankedAcademic);
             }
@@ -178,41 +163,65 @@ namespace ConsoleApp1.assignment6
             switch (Console.ReadLine())
             {
                 case "1":
-                    AddStudent();
+                    Console.WriteLine("Nhap cac thong tin:");
+                    Console.Write("ID: ");
+                    string iD = Console.ReadLine();
+                    Console.Write("Ten: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Gioi tinh: ");
+                    string gender = Console.ReadLine();
+                    Console.Write("Tuoi: ");
+                    int age = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Diem toan: ");
+                    double mathScore = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Diem ly: ");
+                    double physicsScore = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Diem hoa: ");
+                    double chemisScore = Convert.ToDouble(Console.ReadLine());
+
+                    Student s = new Student(iD, name, gender, age, mathScore, physicsScore, chemisScore);
+                    AddStudent(s);
                     return true;
                 case "2":
-                    UpdateStudentByID();
+                    Console.Write("Nhap ID muon cap nhat: ");
+                    UpdateStudentByID(Console.ReadLine());
                     Console.ReadKey();
                     return true;
                 case "3":
-                    DeleteStudent();
+                    Console.Write("Nhap ID sinh vien can xoa :");
+                    DeleteStudent(Console.ReadLine());
                     Console.ReadKey();
                     return true;
                 case "4":
-                    Console.WriteLine("Nhap ten can tim kiem: ");
+                    Console.Write("Nhap ten can tim kiem: ");
                     List<Student> result = SearchStudent(Console.ReadLine());
                     if (result == null) 
                         Console.WriteLine("Khong tim duoc ket qua nao");
                     else
-                        Console.WriteLine($"Co {result.Count} ket qua");
+                        Console.WriteLine($"Co {result.Count} ket qua: ");
+                        DisplayStudents(result);
                     Console.ReadKey();
                     return true;
                 case "5":
                     SortStudentsByScore();
-                    DisplayAllStudents();
-                    return false;
+                    DisplayStudents(StudentList);
+                    Console.ReadKey();
+                    return true;
                 case "6":
                     SortStudentsByName();
-                    DisplayAllStudents();
-                    return false;
+                    DisplayStudents(StudentList);
+                    Console.ReadKey();
+                    return true;
                 case "7":
                     SortStudentsByID();
-                    DisplayAllStudents();
-                    return false;
-                case "8":
-                    DisplayAllStudents();
+                    DisplayStudents(StudentList);
                     Console.ReadKey();
-                    ShowMenu();
+                    return true;
+                case "8":
+                    DisplayStudents(StudentList);
+                    Console.ReadKey();
+                    return true;
+                case "9":
                     return false;
                 default:
                     return true;

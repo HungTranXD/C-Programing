@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1.assignment2;
 using ConsoleApp1.assignment4;
+using ConsoleApp1.assignment6;
 using ConsoleApp1.assignments;
 using ConsoleApp1.assignmnet3;
 using ConsoleApp1.session1;
@@ -12,7 +13,16 @@ using Newtonsoft.Json;
 
 public class Program
 {
-    public static void Main(string[] args) //Session 5
+    public static void Main(string[] args)
+    {
+        ManageStudents ms = new ManageStudents();
+        ms.StudentList.Add(new Student("SV01", "Nguyen An", "Nam", 18, 8.5, 7.6, 8.7));
+        ms.StudentList.Add(new Student("SV02", "Ha Trinh", "Nu", 17, 8, 9, 7.5));
+        ms.StudentList.Add(new Student("SV03", "Tran Quang", "Nam", 19, 6, 7.5, 5));
+        ms.StudentList.Add(new Student("SV04", "An Nam", "Nam", 18, 9, 10, 8.5));
+        ms.ShowMenu();
+    }
+    public static void Main5(string[] args) //Session 5
     {
         //Thread t1 = new Thread(RunThread);
         //t1.Start("Hello");
